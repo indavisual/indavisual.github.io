@@ -20,7 +20,7 @@ Module.expectedDataFileDownloads++;
     } else {
       throw 'using preloaded data can only be done on a web page or in a web worker';
     }
-    var PACKAGE_NAME = 'I:/UE4 Projects/PupLifeVR/Binaries/HTML5/PupLifeVR.data';
+    var PACKAGE_NAME = 'I:\UE4 Projects\PupLifeVR\Binaries\HTML5\PupLifeVR.data';
     var REMOTE_PACKAGE_BASE = 'PupLifeVR.data';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
@@ -153,10 +153,10 @@ Module['FS_createPath']('/PupLifeVR/Content', 'Paks', true, true);
           for (i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
           }
-              Module['removeRunDependency']('datafile_I:/UE4 Projects/PupLifeVR/Binaries/HTML5/PupLifeVR.data');
+              Module['removeRunDependency']('datafile_I:\UE4 Projects\PupLifeVR\Binaries\HTML5\PupLifeVR.data');
 
     };
-    Module['addRunDependency']('datafile_I:/UE4 Projects/PupLifeVR/Binaries/HTML5/PupLifeVR.data');
+    Module['addRunDependency']('datafile_I:\UE4 Projects\PupLifeVR\Binaries\HTML5\PupLifeVR.data');
   
     if (!Module.preloadResults) Module.preloadResults = {};
   

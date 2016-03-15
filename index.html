@@ -1,7 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+	<title>PupLifeVR</title>
+=======
 	<title>VRportfolioMobile</title>
+>>>>>>> f6cf719e8dee520891fb3494aa7e79948006c1cc
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=2">
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -293,7 +297,11 @@ window.onerror  = function(msg, url, line, column, error) {
         addLog( " downloading symbols file ");
         // get non minified symbols and demangle the callstack. 
 		$.ajax({
+<<<<<<< HEAD
+			  url : "PupLifeVR-HTML5-Shipping.js.symbols",
+=======
 			  url : "VRportfolioMobile.js.symbols",
+>>>>>>> f6cf719e8dee520891fb3494aa7e79948006c1cc
 			  dataType: "text",
 			  success : function (data) {	
                   addLog(" symbols file downloaded, demangling..");
@@ -349,6 +357,10 @@ function postRunEmscripten() {
 	$("#compilingmessage").remove();
 	// it still takes couple of ticks after run before anything can be drawn. show the canvas at the last possible moment. 
 	$("#canvas").show(); 
+<<<<<<< HEAD
+	window.dispatchEvent(new Event('resize')); // set canvas to browser resolution
+=======
+>>>>>>> f6cf719e8dee520891fb3494aa7e79948006c1cc
 }
 
 // create a deffered object for the data file. 
@@ -438,8 +450,13 @@ $(document).ready(function() {
     // start downloads in parallel, print when done.  
     var promises = [
 			'Utility.js',
+<<<<<<< HEAD
+			'PupLifeVR.data.js',
+			'PupLifeVR-HTML5-Shipping.js'   
+=======
 			'VRportfolioMobile.data.js',
 			'VRportfolioMobile.js'   
+>>>>>>> f6cf719e8dee520891fb3494aa7e79948006c1cc
 		].map(download); 
 
 	// add the data file promise. 
@@ -461,11 +478,22 @@ $(document).ready(function() {
 				addLog ("all downloads complete ");
 			},
 		function(){
+<<<<<<< HEAD
+				// one or more downloads failed.
+				// force a reload...
+				$('#progressbar').remove(); 
+				$ ('#mainarea').append ( '<div class="alert alert-danger centered-axis-xy" style ="min-height: 20px" role="alert">Reloading!  Please standby...</div>');
+				addLog("Download failed");
+				setTimeout(function() {
+					location.reload();
+				}, 1000);
+=======
 
 				$('#progressbar').remove(); 
 				$ ('#mainarea').append ( '<div class="alert alert-danger centered-axis-xy" style ="min-height: 20px" role="alert">One or more downloads failed! Please refresh this page</div>');
 
 				addLog("Download failed");
+>>>>>>> f6cf719e8dee520891fb3494aa7e79948006c1cc
 			}
 		);
 		
